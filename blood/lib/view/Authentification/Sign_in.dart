@@ -1,3 +1,5 @@
+// ignore_for_file: unused_catch_clause
+
 import 'package:blood/Component/Mybutton.dart';
 import 'package:blood/Component/ShowLoading.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -51,16 +53,16 @@ class _SignInState extends State<SignIn> {
         });
         return userCredential;
       }on FirebaseException catch(e){
-        if(e.code=="email-already-in-use"){
-          var snackBar = SnackBar(content: Text("Email Already in use"),);
-          // ignore: deprecated_member_use
-          _scaffoldKey.currentState!.showSnackBar(snackBar);
-        }
-        if(e.code == "weak-password"){
-          var snackBar = SnackBar(content: Text("weak password"),);
-          // ignore: deprecated_member_use
-          _scaffoldKey.currentState!.showSnackBar(snackBar);
-        }
+        // if(e.code=="email-already-in-use"){
+          // var snackBar = SnackBar(content: Text("Email Already in use"),);
+         
+          // _scaffoldKey.currentState!.showSnackBar(snackBar);
+        // }
+        // if(e.code == "weak-password"){
+          // var snackBar = SnackBar(content: Text("weak password"),);
+          
+          // _scaffoldKey.currentState!.showSnackBar(snackBar);
+        // }
       }
     }
   }

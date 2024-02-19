@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 
 class DetailsDonate extends StatelessWidget {
-
   String bloodGroupe;
   String quantity;
   String name;
@@ -33,7 +32,7 @@ class DetailsDonate extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              padding:EdgeInsets.only(top: 30,left: 10, right: 10),
+              padding: EdgeInsets.only(top: 30, left: 10, right: 10),
               width: MediaQuery.of(context).size.width,
               height: 220,
               color: Color(0xFFBD2733),
@@ -44,68 +43,86 @@ class DetailsDonate extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Expanded(
-                        flex: 2,
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            IconButton(onPressed: (){
-                              Navigator.of(context).pop();
-                            }, icon: Icon(Icons.arrow_back, color: Colors.white,size: 30,),),
-                            SizedBox(width: 10,),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("USERNAME",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 18,
-                                  ),
-                                ),
-                                SizedBox(height: 3,),
-                                Text(this.name,
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        )
-                      ),
-                      Expanded(
-                          child: Column(
+                          flex: 2,
+                          child: Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Row(
+                              IconButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                                icon: Icon(
+                                  Icons.arrow_back,
+                                  color: Colors.white,
+                                  size: 30,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Icon(Icons.location_pin, color: Colors.white, size: 20,),
-                                  Text("ADDRESSE",
+                                  Text(
+                                    "USERNAME",
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 18,
                                     ),
                                   ),
+                                  SizedBox(
+                                    height: 3,
+                                  ),
+                                  Text(
+                                    this.name,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                    ),
+                                  ),
                                 ],
                               ),
-                              Text("ALGERIA",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                ),
+                            ],
+                          )),
+                      Expanded(
+                          child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.location_pin,
+                                color: Colors.white,
+                                size: 20,
                               ),
-                              Text(this.adresse,
+                              Text(
+                                "ADDRESSE",
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
                                 ),
                               ),
                             ],
-                          )
-                      )
+                          ),
+                          Text(
+                            "ALGERIA",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                            ),
+                          ),
+                          Text(
+                            this.adresse,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ],
+                      ))
                     ],
                   ),
                   Container(
@@ -113,88 +130,122 @@ class DetailsDonate extends StatelessWidget {
                       width: 100,
                       height: 100,
                       decoration: BoxDecoration(
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: NetworkImage(this.urlImage)
-                        ),
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: NetworkImage(this.urlImage)),
                           shape: BoxShape.circle,
                           border: Border.all(
                             width: 3,
                             color: Colors.white,
-                          )
-                      ),
+                          )),
                     ),
                   )
                 ],
               ),
             ),
             Container(
-               child: Column(
-                 children: [
-                   SizedBox(height: 20,),
-                   ContainerDataDetails(
-                     icon: Icon(Icons.email,color: Colors.black,size: 25,),
-                     title: 'Email',
-                     subTitle: this.email,
-                   ),
-                   SizedBox(height: 7,),
-                   ContainerDataDetails(
-                     icon: Icon(Icons.calendar_today,color: Colors.black,size: 25,),
-                     title: 'Age',
-                     subTitle:  '${this.age}',
-                   ),
-                   SizedBox(height: 7,),
-                   ContainerDataDetails(
-                     icon: Icon(Icons.phone,color: Colors.black,size: 25,),
-                     title: 'Phone',
-                     subTitle: this.phone,
-                   ),
-                   SizedBox(height: 7,),
-                   ContainerDataDetails(
-                     icon: Icon(Icons.date_range_rounded,color: Colors.black,size: 25,),
-                     title: 'Date Addition',
-                     subTitle:  this.date,
-                   ),
-                   SizedBox(height: 7,),
-                   ContainerDataDetails(
-                     icon: Icon(Icons.hourglass_bottom_rounded,color: Colors.black,size: 25,),
-                     title: 'Quantity',
-                     subTitle: '${this.quantity} ml',
-                   ),
-                   SizedBox(height: 7,),
-                   ContainerDataDetails(
-                     icon: Icon(Icons.group_add,color: Colors.black,size: 25,),
-                     title: 'Blood Groupe',
-                     subTitle:  this.bloodGroupe,
-                   ),
-                   SizedBox(height: 15,),
-                   Container(
-                     width: 220,
-                     height: 50,
-                     child: RaisedButton(
-                       color: Color(0xFF058C42),
-                       onPressed: () async {
-                         await FlutterPhoneDirectCaller.callNumber(this.phone);
-                       },
-                       shape: RoundedRectangleBorder(
-                           borderRadius: BorderRadius.circular(30)
-                       ),
-                       child: Row(
-                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                         children: [
-                           Text("Call",
-                             style: TextStyle(
-                                 color: Colors.white,
-                                 fontSize: 20
-                             ),
-                           ),
-                           Icon(Icons.phone,size: 22, color: Color(0xFF6CDC2D),)
-                         ],
-                       ),
-                     ),
-                   ),
-                 ],
-               ),
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 20,
+                  ),
+                  ContainerDataDetails(
+                    icon: Icon(
+                      Icons.email,
+                      color: Colors.black,
+                      size: 25,
+                    ),
+                    title: 'Email',
+                    subTitle: this.email,
+                  ),
+                  SizedBox(
+                    height: 7,
+                  ),
+                  ContainerDataDetails(
+                    icon: Icon(
+                      Icons.calendar_today,
+                      color: Colors.black,
+                      size: 25,
+                    ),
+                    title: 'Age',
+                    subTitle: '${this.age}',
+                  ),
+                  SizedBox(
+                    height: 7,
+                  ),
+                  ContainerDataDetails(
+                    icon: Icon(
+                      Icons.phone,
+                      color: Colors.black,
+                      size: 25,
+                    ),
+                    title: 'Phone',
+                    subTitle: this.phone,
+                  ),
+                  SizedBox(
+                    height: 7,
+                  ),
+                  ContainerDataDetails(
+                    icon: Icon(
+                      Icons.date_range_rounded,
+                      color: Colors.black,
+                      size: 25,
+                    ),
+                    title: 'Date Addition',
+                    subTitle: this.date,
+                  ),
+                  SizedBox(
+                    height: 7,
+                  ),
+                  ContainerDataDetails(
+                    icon: Icon(
+                      Icons.hourglass_bottom_rounded,
+                      color: Colors.black,
+                      size: 25,
+                    ),
+                    title: 'Quantity',
+                    subTitle: '${this.quantity} ml',
+                  ),
+                  SizedBox(
+                    height: 7,
+                  ),
+                  ContainerDataDetails(
+                    icon: Icon(
+                      Icons.group_add,
+                      color: Colors.black,
+                      size: 25,
+                    ),
+                    title: 'Blood Groupe',
+                    subTitle: this.bloodGroupe,
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Container(
+                    width: 220,
+                    height: 50,
+                    child: ElevatedButton(
+                      onPressed: () async {
+                        await FlutterPhoneDirectCaller.callNumber(this.phone);
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Call",
+                            style: TextStyle(color: Colors.white, fontSize: 20),
+                          ),
+                          Icon(
+                            Icons.phone,
+                            size: 22,
+                            color: Color(0xFF6CDC2D),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             )
           ],
         ),

@@ -112,14 +112,12 @@ class MyDonate extends StatelessWidget {
                 Container(
                   width: 100,
                   height: 28,
-                  child: RaisedButton(
-                    color: Color(0xFF058C42),
+                  child: ElevatedButton(
+                    
                     onPressed: () async {
                       await FlutterPhoneDirectCaller.callNumber(this.phone);
                     },
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)
-                    ),
+                    
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
